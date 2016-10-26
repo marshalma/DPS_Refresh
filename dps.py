@@ -85,7 +85,7 @@ def main(client_email, client_user_id, client_password, client_month, client_dat
 
         # search for first available spot in html file
         index1 = html_str.find('calendar-available')
-        while index1:
+        while index1 > 0:
             index2 = index1 + html_str[index1:].find('dosubmit')
             index3 = index2 + html_str[index2:].find('\'')
             index4 = index3 + 1 + html_str[index3+1:].find('\'')
