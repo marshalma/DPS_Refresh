@@ -66,7 +66,7 @@ def submit_appt(day,time):
 
 
 def main(client_email, client_user_id, client_password, client_month, client_date):
-    
+
     http_post_fields.field_checking_spots['prev_date'] = client_month
     http_post_fields.fields_submit_appt['loginname'] = client_user_id
     http_post_fields.fields_submit_appt['password'] = client_password
@@ -95,7 +95,7 @@ def main(client_email, client_user_id, client_password, client_month, client_dat
                 send_mail(day, client_email)
                 # time = view_available_time(day)
                 # submit_appt(day,time)
-                return
+                # return
             else:
                 index1 = html_str.find('calendar-available', index1+1)
 
