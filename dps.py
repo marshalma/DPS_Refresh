@@ -93,8 +93,8 @@ def main(client_email, client_user_id, client_password, client_month, client_dat
 
             if day in client_date:
                 send_mail(day, client_email)
-                time = view_available_time(day)
-                submit_appt(day,time)
+                # time = view_available_time(day)
+                # submit_appt(day,time)
                 return
             else:
                 index1 = html_str.find('calendar-available', index1+1)
