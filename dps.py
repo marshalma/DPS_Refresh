@@ -4,6 +4,7 @@ import time
 from email.mime.text import MIMEText
 import email.utils
 import http_post_fields
+import datetime
 
 url = 'https://booknow.securedata-trans.com/1qed83ds/'
 timeout = 15.0
@@ -17,6 +18,7 @@ def send_mail(body, client_email):
     mail.ehlo()
     mail.starttls()
     mail.login('mashuo93@gmail.com', '4NX-KXG-6fz-Zm2')
+    print("time: {}, slot: {} , sending email".format(datetime.datetime.now(), body), end = '\n')
     mail.sendmail('mashuo93@gmail.com', client_email, msg.as_string())
     mail.close()
 
@@ -99,7 +101,7 @@ def main(client_email, client_user_id, client_password, client_month, client_dat
             else:
                 index1 = html_str.find('calendar-available', index1+1)
 
-        print('iter: %d, not found' % iteration, end='\n')
+        print('time:{}, iter:{} , not found'.format(datetime.datetime.now(), iteration), end='\n')
         iteration += + 1
         r_check.close()
 
